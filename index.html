@@ -1,60 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="https://fav.farm/🔥" />
-    <title>Wack A Mole</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whack-a-Mole</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <h1>Whack-a-Mole! <span class="score">0</span></h1>
+
+  <!-- Tela de Login com Ranking -->
+  <div class="login-container" id="loginScreen">
+    <h1>Bem-vindo!</h1>
+    <form id="loginForm">
+      <input type="text" id="nome" placeholder="Nome" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
+    </form>
+
+    <h2>Ranking Atual</h2>
+    <ul id="rankingListLogin"></ul>
+  </div>
+
+  <!-- Tela de Jogo -->
+  <div id="gameScreen" style="display:none;">
+    <h2>Score: <span class="score">0</span></h2>
+    <h2>Tempo restante: <span id="timer">10</span>s</h2>
     <button onclick="startGame()">Start!</button>
 
-    <div class="game">
-
-        <div class="hole">
-            <div class="mole"></div>
-        </div>
-
-        <div class="hole hole2">
-            <div class="mole"></div>
-        </div>
-
-        <div class="hole hole3">
-            <div class="mole"></div>
-        </div>
-
-        <div class="hole hole4">
-            <div class="mole"></div>
-        </div>
-
-        <div class="hole hole5">
-            <div class="mole"></div>
-        </div>
-
-        <div class="hole hole6">
-            <div class="mole"></div>
-        </div>
-
-        <!-- <div class="hole hole7">
-            <div class="mole"></div>
-        </div>
-
-        <div class="hole hole8">
-            <div class="mole"></div>
-        </div>
-
-        <div class="hole hole9">
-            <div class="mole"></div>
-        </div> -->
-
+    <div id="popup" class="popup" style="display:none;">
+      <div class="popup-content">
+        <h2>Fim de jogo!</h2>
+        <p id="popupMessage"></p>
+        <button onclick="restartGame()">Jogar novamente</button>
+        <button onclick="exitGame()">Sair</button>
+      </div>
     </div>
-    <script src="js/script.js"></script>
-</body>
 
+    <div class="game">
+      <div class="hole"><div class="mole"></div></div>
+      <div class="hole"><div class="mole"></div></div>
+      <div class="hole"><div class="mole"></div></div>
+      <div class="hole"><div class="mole"></div></div>
+      <div class="hole"><div class="mole"></div></div>
+      <div class="hole"><div class="mole"></div></div>
+      
+    </div>
+
+    <h2>Ranking</h2>
+    <ul id="rankingList"></ul>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
 </html>
