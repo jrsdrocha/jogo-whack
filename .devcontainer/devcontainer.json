@@ -1,0 +1,12 @@
+{
+    "name": "Ambiente Web (Node.js)",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ritwickdey.LiveServer",
+                "dracula-theme.theme-dracula"
+                
+            ]
+        }
+    }
+}
